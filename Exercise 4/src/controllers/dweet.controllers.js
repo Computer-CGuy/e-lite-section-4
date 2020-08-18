@@ -16,7 +16,13 @@ exports.create = (req, res) => {
     if(!req.body) {
       return res.status(400).send({
       message: "Please fill all required field"
-    });
+      });
+    }
+    // Maximum Limit
+    if(dweet.length>140){
+      return res.status(406).send({
+      message: "Please fill all required field"
+      });
     }
     // Create a new Dweet
     const dweet = new Dweet({
