@@ -21,7 +21,7 @@ exports.create = (req, res) => {
     // Maximum Limit
     if(dweet.length>140){
       return res.status(406).send({
-      message: "Please fill all required field"
+      message: "Dweet max length reached!"
       });
     }
     // Create a new Dweet
