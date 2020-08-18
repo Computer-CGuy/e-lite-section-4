@@ -6,9 +6,8 @@ app.get('/hello', (req, res) => {
   res.send('Hello, world!')
 })
 
-app.get('/hello/:*', (req, res) => {
-	var name = req.url.split("/")[2].replace(":","");
-  	res.send(`Hello, ${name}!`)
+app.get('/hello/:id', (req, res) => {
+  	res.send(`Hello, ${req.params.id}!`)
 })
 
 app.listen(port, () => {
